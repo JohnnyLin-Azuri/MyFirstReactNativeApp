@@ -1,7 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import { Text, View } from 'react-native';
-import { Image } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
 export default class MyFirstReactNativeApp extends Component {
   render() {
@@ -10,13 +10,13 @@ export default class MyFirstReactNativeApp extends Component {
         'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
     };
     return (
-      // eslint-disable-next-line react-native/no-inline-styles
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Hello, world!</Text>
+        <Text style={{ textAlign: 'center'}}>Hello, world!</Text>
         <Greeting name="Chewy" />
         <Greeting name="Bloomy" />
         <Greeting name="Bloody" />
-        <Image source={pic} style={{width: 193, height: 110}} />
+        <Image source={pic} style={{width: 193, height: 110, alignSelf: 'center'}} />
+        <Blink text= "This text blinks." />
       </View>
     );
   }
@@ -26,7 +26,7 @@ class Greeting extends Component {
   render() {
     return (
       <View style={{alignItems: 'center'}}>
-        <Text>Hello, {this.props.name}!</Text>
+        <Text style={styles.red}>Hello, {this.props.name}!</Text>
       </View>
     );
   }
@@ -38,8 +38,8 @@ class Blink extends Component {
     setInterval(
       () =>(
         this.setState(previousState => ({
-       isShowingText: !previousState.isShowingText }))
-  ), 1000);
+          isShowingText: !previousState.isShowingText }))
+    ), 1000);
   }
 
   //state object
@@ -51,7 +51,18 @@ class Blink extends Component {
     }
 
     return (
-      <Text>{this.props.text}</Text>
+      <Text style={{ textAlign: 'center'}}>{this.props.text}</Text>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
