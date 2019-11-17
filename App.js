@@ -1,7 +1,5 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
+import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
 
 export default class MyFirstReactNativeApp extends Component {
   render() {
@@ -11,12 +9,15 @@ export default class MyFirstReactNativeApp extends Component {
     };
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={{ textAlign: 'center'}}>Hello, world!</Text>
+        <Text style={{textAlign: 'center'}}>Hello, world!</Text>
         <Greeting name="Chewy" />
         <Greeting name="Bloomy" />
         <Greeting name="Bloody" />
-        <Image source={pic} style={{width: 193, height: 110, alignSelf: 'center'}} />
-        <Blink text= "This text blinks." />
+        <Image
+          source={pic}
+          style={{width: 193, height: 110, alignSelf: 'center'}}
+        />
+        <Blink text="This text blinks." />
       </View>
     );
   }
@@ -36,23 +37,23 @@ class Blink extends Component {
   componentDidMount() {
     // Toggle the state every second
     setInterval(
-      () =>(
+      () =>
         this.setState(previousState => ({
-          isShowingText: !previousState.isShowingText }))
-    ), 1000);
+          isShowingText: !previousState.isShowingText,
+        })),
+      1000,
+    );
   }
 
   //state object
-  state = { isShowingText: true };
+  state = {isShowingText: true};
 
   render() {
     if (!this.state.isShowingText) {
       return null;
     }
 
-    return (
-      <Text style={{ textAlign: 'center'}}>{this.props.text}</Text>
-    );
+    return <Text style={{textAlign: 'center'}}>{this.props.text}</Text>;
   }
 }
 
