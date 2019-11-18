@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import { TextInput, ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import { Button, TextInput, ScrollView, StyleSheet, Text, View, Image} from 'react-native';
 
 export default class MyFirstReactNativeApp extends Component {
   constructor(props) {
     super(props);
-    this.state = {text: ''};
+    this.state = {text: '', translated: ''};
   }
   render() {
     let pic = {
@@ -26,6 +26,15 @@ export default class MyFirstReactNativeApp extends Component {
         <Text>
           What you wrote: {this.state.text}
         </Text>
+        <Button
+          onPress={() => {
+            //alert('This button doesn\'t work yet');
+            this.setState(state => (this.state.translated = 'Sadly, I don\'t know French yet...'))
+            //Might be a good idea to use an api call to translate for fun
+          }}
+          title="Translate EN to FR"
+        />
+        <Text>{this.state.translated}</Text>
       </View>
     );
   }
