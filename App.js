@@ -36,13 +36,13 @@ class Greeting extends Component {
 class Blink extends Component {
   componentDidMount() {
     // Toggle the state every second
-    setInterval(
+    /*setInterval(
       () =>
         this.setState(previousState => ({
           isShowingText: !previousState.isShowingText,
         })),
       1000,
-    );
+    );*/
   }
 
   //state object
