@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
-import { Button, TextInput, ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import {
+  Button,
+  TextInput,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+} from 'react-native';
 
 export default class MyFirstReactNativeApp extends Component {
   constructor(props) {
@@ -22,43 +30,43 @@ export default class MyFirstReactNativeApp extends Component {
           style={{width: 193, height: 110, alignSelf: 'center'}}
         />
         <Blink text="This text doesn't blink anymore." />
-        <TextInput placeholder='type something...' value={this.state.text} onChangeText={(text) => this.setState({text})}></TextInput>
-        <Text>
-          What you wrote: {this.state.text}
-        </Text>
+        <TextInput
+          placeholder="type something..."
+          value={this.state.text}
+          onChangeText={text => this.setState({text})}
+        />
+        <Text>What you wrote: {this.state.text}</Text>
         <Button
           onPress={() => {
             //alert('This button doesn\'t work yet');
-            this.setState(state => (this.state.translated = 'Sadly, I don\'t know French yet...'))
+            this.setState(
+              state =>
+                (this.state.translated = "Sadly, I don't know French yet..."),
+            );
             //Might be a good idea to use an api call to translate for fun
           }}
           title="Translate EN to FR"
         />
         <Text>{this.state.translated}</Text>
         <ScrollView>
-        <Text>
-          From here on is a ScrollView.
-        </Text>
-        <Greeting name="Chewy" />
-        <Greeting name="Bloomy" />
-        <Greeting name="Bloody" />
-        <Greeting name="Chewy" />
-        <Greeting name="Bloomy" />
-        <Greeting name="Bloody" />
-        <Greeting name="Chewy" />
-        <Greeting name="Bloomy" />
-        <Greeting name="Bloody" />
-        <Greeting name="Chewy" />
-        <Greeting name="Bloomy" />
-        <Greeting name="Bloody" />
-      </ScrollView>
-      <View>
-        <Text>
-          Another View
-        </Text>
+          <Text>From here on is a ScrollView.</Text>
+          <Greeting name="Chewy" />
+          <Greeting name="Bloomy" />
+          <Greeting name="Bloody" />
+          <Greeting name="Chewy" />
+          <Greeting name="Bloomy" />
+          <Greeting name="Bloody" />
+          <Greeting name="Chewy" />
+          <Greeting name="Bloomy" />
+          <Greeting name="Bloody" />
+          <Greeting name="Chewy" />
+          <Greeting name="Bloomy" />
+          <Greeting name="Bloody" />
+        </ScrollView>
+        <View>
+          <Text>Another View</Text>
+        </View>
       </View>
-      </View>
-      
     );
   }
 }
