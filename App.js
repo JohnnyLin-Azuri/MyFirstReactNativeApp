@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
-import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import { TextInput, ScrollView, StyleSheet, Text, View, Image} from 'react-native';
 
 export default class MyFirstReactNativeApp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
   render() {
     let pic = {
       uri:
@@ -18,6 +22,10 @@ export default class MyFirstReactNativeApp extends Component {
           style={{width: 193, height: 110, alignSelf: 'center'}}
         />
         <Blink text="This text doesn't blink anymore." />
+        <TextInput placeholder='type something...' value={this.state.text} onChangeText={(text) => this.setState({text})}></TextInput>
+        <Text>
+          What you wrote: {this.state.text}
+        </Text>
       </View>
     );
   }
