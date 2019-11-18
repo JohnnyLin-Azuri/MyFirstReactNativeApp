@@ -17,7 +17,7 @@ export default class MyFirstReactNativeApp extends Component {
           source={pic}
           style={{width: 193, height: 110, alignSelf: 'center'}}
         />
-        <Blink text="This text blinks." />
+        <Blink text="This text doesn't blink anymore." />
       </View>
     );
   }
