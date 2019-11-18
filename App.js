@@ -35,7 +35,30 @@ export default class MyFirstReactNativeApp extends Component {
           title="Translate EN to FR"
         />
         <Text>{this.state.translated}</Text>
+        <ScrollView>
+        <Text>
+          From here on is a ScrollView.
+        </Text>
+        <Greeting name="Chewy" />
+        <Greeting name="Bloomy" />
+        <Greeting name="Bloody" />
+        <Greeting name="Chewy" />
+        <Greeting name="Bloomy" />
+        <Greeting name="Bloody" />
+        <Greeting name="Chewy" />
+        <Greeting name="Bloomy" />
+        <Greeting name="Bloody" />
+        <Greeting name="Chewy" />
+        <Greeting name="Bloomy" />
+        <Greeting name="Bloody" />
+      </ScrollView>
+      <View>
+        <Text>
+          Another View
+        </Text>
       </View>
+      </View>
+      
     );
   }
 }
